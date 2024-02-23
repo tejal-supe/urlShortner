@@ -4,23 +4,29 @@ const urlShema = new mongoose.Schema({
   shortUrl: {
     type: String,
     unique: true,
-    required: true,
+    // required: true,
   },
   originalUrl: {
     type: String,
     required: true,
   },
+  shortCode:{
+    type:String,
+    unique: true,
+
+  },
   totalClicks: [
     {
-      time: { type: Number },
+      times: { type: Number },
     },
    
   ]
 },
 {
-    time:true
+    times:true
 }
 );
 
-export const URL = mongoose.model('url',urlShema);
+export const UrlModel = mongoose.model('url',urlShema);
 
+ 
